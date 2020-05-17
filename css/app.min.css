@@ -498,10 +498,6 @@ p {
   font-size: 2rem;
 }
 
-header {
-  position: relative;
-}
-
 .navigation {
   background-color: #e98383;
   position: absolute;
