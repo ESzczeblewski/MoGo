@@ -498,65 +498,168 @@ p {
   font-size: 2rem;
 }
 
+header {
+  position: relative;
+  height: 100vh;
+}
+
+.dark-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.801);
+  transition: opacity ease-out 0.2s;
+}
+
+.dark-background--off {
+  opacity: 0;
+}
+
 .navigation {
   background-color: #e98383;
-  position: absolute;
+  position: fixed;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0.5em 1.5em;
+  padding: 0.5em;
+  z-index: 1;
 }
 
 .navigation__hamburger {
-  position: relative;
+  padding: 0.5em;
+  display: inline-block;
+  cursor: pointer;
   background-color: transparent;
+  margin: 0;
+  border: 0;
+}
+
+.navigation__hamburger__box {
+  display: inline-block;
+  position: relative;
   width: 2.5em;
   height: 1.5em;
   cursor: pointer;
 }
 
-.navigation__hamburger span {
+.navigation__hamburger__box span {
+  display: block;
   width: 100%;
   height: 0.25em;
   background-color: black;
   position: absolute;
 }
 
-.navigation__hamburger :first-child {
+.navigation__hamburger__box :first-child {
   top: 0;
   transition: top ease-in-out 0.2s 0.4s, transform ease-in-out 0.2s;
 }
 
-.navigation__hamburger :nth-child(2n) {
+.navigation__hamburger__box :nth-child(2n) {
   top: 50%;
   transform: translateY(-50%);
   transition: visibility ease-in-out 0.1s 0.2s;
 }
 
-.navigation__hamburger :last-child {
+.navigation__hamburger__box :last-child {
   bottom: 0;
   transition: bottom ease-in-out 0.2s 0.4s, transform ease-in-out 0.2s;
 }
 
-.navigation__hamburger.open :first-child {
+.navigation__hamburger__box.open :first-child {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
   transition: top ease-in-out 0.2s, transform ease-in-out 0.2s 0.4s;
 }
 
-.navigation__hamburger.open :nth-child(2n) {
+.navigation__hamburger__box.open :nth-child(2n) {
   visibility: hidden;
   transition: visibility ease-in-out 0.4s;
 }
 
-.navigation__hamburger.open :last-child {
+.navigation__hamburger__box.open :last-child {
   bottom: 50%;
   transform: translateY(50%) rotate(-45deg);
   transition: bottom ease-in-out 0.2s, transform ease-in-out 0.2s 0.4s;
 }
 
 .navigation__list {
-  display: none;
+  background: linear-gradient(#e98383, #f2da8a);
+  font-size: 3rem;
+  font-weight: 900;
+  position: absolute;
+  top: 10em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 14em;
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 0.4s, visibility 0.4s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (min-width: 400px) and (orientation: landscape) {
+  .navigation__list {
+    top: 7em;
+    height: 7.5em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 720px) and (orientation: landscape) {
+  .navigation__list {
+    justify-content: center;
+  }
+}
+
+.navigation__list.show {
+  opacity: 1;
+  transition: visibility 1s;
+  visibility: visible;
+}
+
+.navigation__list button {
+  position: relative;
+  color: white;
+  font-weight: 600;
+  padding: 0.2em 2em;
+  background-color: transparent;
+  border: 0;
+}
+
+.navigation__list button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0.1em;
+  transition: all ease-out 0.3s;
+  background-color: #f2da8a;
+}
+
+.navigation__list button:hover {
+  color: #f2da8a;
+}
+
+.navigation__list button:hover::before {
+  width: 45%;
+}
+
+@media (min-width: 400px) and (orientation: landscape) {
+  .navigation__list button {
+    padding: 0.2em 0.5em;
+  }
 }

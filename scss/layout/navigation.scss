@@ -1,55 +1,140 @@
-.navigation {
-  background-color: rgb(233, 131, 131);
+@import '../base/_variables.scss';
+
+.dark-background {
+  width: 100%;
+  height: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.801);
+  transition: opacity ease-out 0.2s;
+}
+
+.dark-background--off {
+  opacity: 0;
+}
+
+.navigation {
+  background-color: $basic-peachy;
+  position: fixed;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0.5em 1.5em;
+  padding: 0.5em;
+  z-index: 1;
   &__hamburger {
-    position: relative;
-    background-color: transparent;
-    width: 2.5em;
-    height: 1.5em;
+    padding: 0.5em;
+    display: inline-block;
     cursor: pointer;
-    span {
-      width: 100%;
-      height: 0.25em;
-      background-color: black;
-      position: absolute;
-    }
-    :first-child {
-      top: 0;
-      transition: top ease-in-out 0.2s 0.4s, transform ease-in-out 0.2s;
-    }
-    :nth-child(2n) {
-      top: 50%;
-      transform: translateY(-50%);
-      transition: visibility ease-in-out 0.1s 0.2s;
-    }
-    :last-child {
-      bottom: 0;
-      transition: bottom ease-in-out 0.2s 0.4s, transform ease-in-out 0.2s;
-    }
-    &.open {
+    background-color: transparent;
+    margin: 0;
+    border: 0;
+    &__box {
+      display: inline-block;
+      position: relative;
+      width: 2.5em;
+      height: 1.5em;
+      cursor: pointer;
+      span {
+        display: block;
+        width: 100%;
+        height: 0.25em;
+        background-color: black;
+        position: absolute;
+      }
       :first-child {
-        top: 50%;
-        transform: translateY(-50%) rotate(45deg);
-        transition: top ease-in-out 0.2s, transform ease-in-out 0.2s 0.4s;
+        top: 0;
+        transition: top ease-in-out 0.2s 0.4s, transform ease-in-out 0.2s;
       }
       :nth-child(2n) {
-        visibility: hidden;
-        transition: visibility ease-in-out 0.4s;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: visibility ease-in-out 0.1s 0.2s;
       }
       :last-child {
-        bottom: 50%;
-        transform: translateY(50%) rotate(-45deg);
-        transition: bottom ease-in-out 0.2s, transform ease-in-out 0.2s 0.4s;
+        bottom: 0;
+        transition: bottom ease-in-out 0.2s 0.4s, transform ease-in-out 0.2s;
+      }
+      &.open {
+        :first-child {
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+          transition: top ease-in-out 0.2s, transform ease-in-out 0.2s 0.4s;
+        }
+        :nth-child(2n) {
+          visibility: hidden;
+          transition: visibility ease-in-out 0.4s;
+        }
+        :last-child {
+          bottom: 50%;
+          transform: translateY(50%) rotate(-45deg);
+          transition: bottom ease-in-out 0.2s, transform ease-in-out 0.2s 0.4s;
+        }
       }
     }
   }
   &__list {
-    display: none;
+    background: $main-gradient;
+    font-size: 3rem;
+    font-weight: 900;
+    position: absolute;
+    top: 10em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 14em;
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: opacity 0.4s, visibility 0.4s;
+    opacity: 0;
+    visibility: hidden;
+    @media (min-width: 400px) and (orientation: landscape) {
+      top: 7em;
+      height: 7.5em;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    @media (min-width: 720px) and (orientation: landscape) {
+      justify-content: center;
+    }
+    &.show {
+      opacity: 1;
+      transition: visibility 1s;
+      visibility: visible;
+    }
+    button {
+      position: relative;
+      color: rgb(255, 255, 255);
+      font-weight: 600;
+      padding: 0.2em 2em;
+      background-color: transparent;
+      border: 0;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0.1em;
+        transition: all ease-out 0.3s;
+        background-color: rgb(242, 218, 138);
+      }
+      &:hover {
+        color: rgb(242, 218, 138);
+        &::before {
+          width: 45%;
+        }
+      }
+      @media (min-width: 400px) and (orientation: landscape) {
+        padding: 0.2em 0.5em;
+      }
+    }
   }
 }
