@@ -602,9 +602,14 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
   transition: opacity 0.4s, visibility 0.4s;
   opacity: 0;
   visibility: hidden;
+=======
+  transition: opacity 0.4s;
+  opacity: 0;
+>>>>>>> f53a0fcd91b5adca1ba4055e45fdd0ec40dc75c7
 }
 
 @media (min-width: 400px) and (orientation: landscape) {
@@ -625,8 +630,11 @@ header {
 
 .navigation__list.show {
   opacity: 1;
+<<<<<<< HEAD
   transition: visibility 1s;
   visibility: visible;
+=======
+>>>>>>> f53a0fcd91b5adca1ba4055e45fdd0ec40dc75c7
 }
 
 .navigation__list button {
