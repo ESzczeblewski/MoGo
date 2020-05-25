@@ -11,21 +11,24 @@
     <link rel="stylesheet" href="css/app.min.css">
   </head>
   <body>
+    <div class="dark-background dark-background--off"></div>
     <header>
       <nav class="navigation">
         <img src="img/MoGo.png" alt="MoGo logo">
-        <div class="navigation__hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="navigation__hamburger" aria-expanded="false">
+          <div class="navigation__hamburger__box">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <div class="navigation__list">
+          <button>About</button>
+          <button>Service</button>
+          <button>Work</button>
+          <button>Blog</button>
+          <button>Contact</button>
         </div>
-        <ul class="navigation__list">
-          <li>About</li>
-          <li>Service</li>
-          <li>Work</li>
-          <li>Blog</li>
-          <li>Contact</li>
-        </ul>
       </nav>
       <div class="banner">
         <h2>Creative Template</h2>
