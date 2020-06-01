@@ -58,7 +58,7 @@
     }
     &--focus {
       transform: translate(-0.5em, -0.5em);
-      box-shadow: 0.5em 0.5em 0px 0px rgb(149, 255, 211);
+      box-shadow: 0.5em 0.5em 0px 0px $minty;
       &::before {
         content: '';
         position: absolute;

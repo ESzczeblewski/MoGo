@@ -1,0 +1,27 @@
+@import '../base/_variables.scss';
+
+.numbers {
+  margin-bottom: 1em;
+  background-color: #ececec;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  &__tile {
+    color: $basic-white;
+    text-align: center;
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: $minty;
+    span {
+      font-size: 5rem;
+      margin-bottom: 0.1em;
+    }
+  }
+  :last-child {
+    grid-column: 1/3;
+  }
+}

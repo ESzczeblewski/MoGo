@@ -68,7 +68,7 @@
 
 .main__imgs--focus {
   transform: translate(-0.5em, -0.5em);
-  box-shadow: 0.5em 0.5em 0px 0px #95ffd3;
+  box-shadow: 0.5em 0.5em 0px 0px #95e1d3;
 }
 
 .main__imgs--focus::before {
