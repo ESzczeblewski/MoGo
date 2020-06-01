@@ -25,7 +25,7 @@
   align-items: center;
   width: 100%;
   padding: 0.5em;
-  z-index: 1;
+  z-index: 2;
   &__hamburger {
     padding: 0.5em;
     display: inline-block;
@@ -82,11 +82,11 @@
     font-size: 3rem;
     font-weight: 900;
     position: absolute;
-    top: 10em;
+    top: 200%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     width: 85%;
-    height: 14em;
+    height: 15em;
     padding: 2em 0;
     display: flex;
     flex-direction: column;
