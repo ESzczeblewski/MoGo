@@ -67,6 +67,7 @@ p {
 }
 
 header {
+  margin-bottom: 1em;
   position: relative;
   height: 100vh;
   display: flex;

@@ -7,3 +7,22 @@
   height: 2px;
   background-color: $back-color;
 }
+
+@mixin article-title {
+  text-align: center;
+  position: relative;
+  margin-bottom: 3em;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -1em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5em;
+    height: 0.1em;
+    background-color: $basic-peachy;
+  }
+  h4 {
+    margin-bottom: 0.5em;
+  }
+}

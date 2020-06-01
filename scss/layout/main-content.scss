@@ -1,24 +1,10 @@
 @import '../base/_variables.scss';
+@import '../base/_mixins.scss';
 
 .main {
   padding: 1em;
   &__title {
-    text-align: center;
-    position: relative;
-    margin-bottom: 2em;
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: -1em;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 2.5em;
-      height: 0.1em;
-      background-color: $basic-peachy;
-    }
-    h4 {
-      margin-bottom: 0.5em;
-    }
+    @include article-title;
   }
   &__description {
     padding: 0 0.5em;

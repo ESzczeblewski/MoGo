@@ -582,6 +582,7 @@ p {
 }
 
 header {
+  margin-bottom: 1em;
   position: relative;
   height: 100vh;
   display: flex;
@@ -834,7 +835,7 @@ header {
 .main__title {
   text-align: center;
   position: relative;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
 
 .main__title::before {
@@ -912,7 +913,7 @@ header {
 }
 
 .numbers {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   background-color: #ececec;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -938,4 +939,65 @@ header {
 
 .numbers :last-child {
   grid-column: 1/3;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.services__title {
+  text-align: center;
+  position: relative;
+  margin-bottom: 3em;
+}
+
+.services__title::before {
+  content: '';
+  position: absolute;
+  bottom: -1em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.5em;
+  height: 0.1em;
+  background-color: #e98383;
+}
+
+.services__title h4 {
+  margin-bottom: 0.5em;
+}
+
+.services__element {
+  display: grid;
+  grid-template-columns: 3em 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 80%;
+  max-width: 20em;
+  padding: 2em 0;
+  margin: auto;
+  border-bottom: 1px solid #000000;
+}
+
+.services__element svg {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  margin-top: 1em;
+}
+
+.services__element :nth-child(2) {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  align-self: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.services__element :last-child {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.services :nth-child(2) {
+  padding-top: 0;
 }
