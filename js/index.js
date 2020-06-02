@@ -3,6 +3,10 @@ const hamburgerBox = document.querySelector('.navigation__hamburger__box');
 const navList = document.querySelector('.navigation__list');
 const drkBackground = document.querySelector('.dark-background');
 const mainImgsInfo = document.querySelectorAll('.main__imgs__pic__info');
+const weDoElement = document.querySelector('.we-do__info__element');
+const weDoArrow = document.querySelector('.we-do__info__element__arrow');
+const weDoDes = document.querySelector('.we-do__info__element__des');
+
 
 const handleClick = () => {
   hamburgerBox.classList.toggle('open');
@@ -20,3 +24,11 @@ document.querySelectorAll('.main__imgs__pic').forEach(item => {
     })
   })
 })
+
+const open = () => {
+  weDoArrow.classList.toggle('js-open__turn');
+  weDoDes.classList.toggle('js-open__des');
+  weDoElement.classList.toggle('js-open');
+}
+
+weDoArrow.addEventListener('click', open);
