@@ -7,10 +7,7 @@
     @include article-title;
   }
   &__description {
-    padding: 0 0.5em;
-    margin-bottom: 3em;
-    line-height: 1.5em;
-    text-align: center;
+    @include article-description;
   }
   &__imgs {
     display: flex;

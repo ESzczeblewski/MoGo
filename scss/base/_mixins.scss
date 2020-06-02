@@ -26,3 +26,10 @@
     margin-bottom: 0.5em;
   }
 }
+
+@mixin article-description {
+  padding: 0 0.5em;
+  margin-bottom: 3em;
+  line-height: 1.5em;
+  text-align: center;
+}
