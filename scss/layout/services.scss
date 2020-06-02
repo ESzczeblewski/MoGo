@@ -4,7 +4,7 @@
 .services {
   display: flex;
   flex-direction: column;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
   &__title {
     @include article-title;
   }
@@ -36,5 +36,8 @@
   }
   :nth-child(2) {
     padding-top: 0;
+  }
+  :last-child {
+    border: none;
   }
 }

@@ -168,7 +168,18 @@
         <h4>For all devices</h4>
         <h3>Unique Design</h3>
       </div>
-      <img class="design__background" src="img/unique-background-mobile.jpg" alt="">
+      <img class="design__background"
+        alt="Nosediving eagle"
+        srcset="
+        img/unique-background-mobile.jpg 420w,
+        img/unique-background-tablet.jpg 700w,
+        img/unique-background-tablet-XL.jpg 900w,
+        img/unique-background-laptop.jpg 1200w,
+        img/unique-background.jpg 1400w
+        "
+        src="img/unique-background-mobile.jpg"\
+        sizes="100vw"
+        >
       <img class="design__tablet" src="img/unique-tablet.png" alt="Tablet">
       <img class="design__phone" src="img/iphone.png" alt="Iphone">
     </article>
