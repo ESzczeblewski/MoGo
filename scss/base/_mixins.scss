@@ -33,3 +33,20 @@
   line-height: 1.5em;
   text-align: center;
 }
+
+@mixin arrow-position($rotate) {
+  position: relative;
+  justify-self: center;
+  width: 2.5em;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate($rotate);
+    width: 1.5em;
+    height: 100%;
+  }
+}
