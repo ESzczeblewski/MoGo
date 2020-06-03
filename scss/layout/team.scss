@@ -1,0 +1,64 @@
+@import '../base/_mixins.scss';
+@import '../base/_variables.scss';
+
+.team {
+  padding: 1em 1em 0;
+  &__title {
+    @include article-title;
+  }
+  &__description {
+    @include article-description;
+  }
+  &__member {
+    position: relative;
+    width: 80%;
+    margin: 0 auto 2.5em;
+    display: grid;
+    &__img {
+      position: relative;
+      width: 100%;
+      margin: 0 auto 1em;
+      transition: transform ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
+      cursor: pointer;
+      img {
+        width: 100%;
+      }
+      &__social {
+        @include img-info-position;
+        grid-template-columns: repeat(4, auto);
+        gap: 1px;
+        z-index: 9;
+        fill: #f38181;
+        background-color: $basic-peachy;
+        svg {
+          padding: 0.5em;
+          width: 2.2em;
+          height: 2.2em;
+          background-color: $basic-yellow;
+          &:hover,
+          &:active {
+            background-color: $basic-peachy;
+            fill: $basic-white;
+          }
+        }
+      }
+      .show-social {
+        display: grid;
+      }
+    }
+    &__img--focus {
+      @include img-overlay;
+    }
+    p {
+      text-align: center;
+    }
+    &__name {
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 0.5em;
+    }
+    &__occupation {
+      color: #aaa9a9;
+    }
+  }
+}

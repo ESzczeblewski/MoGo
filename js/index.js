@@ -25,6 +25,15 @@ document.querySelectorAll('.main__imgs__pic').forEach(item => {
   })
 })
 
+document.querySelectorAll('.team__member__img').forEach(item => {
+  item.addEventListener('click', event => {
+    item.classList.toggle('team__member__img--focus');
+    item.querySelectorAll('.team__member__img__social').forEach(element => {
+      element.classList.toggle('show-social');
+    })
+  })
+})
+
 const open = () => {
   weDoArrow.classList.toggle('js-open__turn');
   weDoDes.classList.toggle('js-open__des');
