@@ -30,13 +30,17 @@
         z-index: 9;
         fill: #f38181;
         background-color: $basic-peachy;
+        a:visited {
+          fill: inherit;
+          stroke: inherit;
+        }
         svg {
           padding: 0.5em;
           width: 2.2em;
           height: 2.2em;
           background-color: $basic-yellow;
-          &:hover,
-          &:active {
+          &:visited,
+          &:hover {
             background-color: $basic-peachy;
             fill: $basic-white;
           }

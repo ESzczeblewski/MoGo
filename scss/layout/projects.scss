@@ -1,0 +1,49 @@
+@import '../base/_mixins.scss';
+@import '../base/_variables.scss';
+
+.projects {
+  margin-bottom: 2em;
+  &__title {
+    @include article-title;
+  }
+  &__description {
+    @include article-description;
+    padding: 0 2em;
+  }
+  &__gallery {
+    display: grid;
+    &__img {
+      position: relative;
+      img {
+        width: 100%;
+      }
+      &:hover {
+        @include img-overlay;
+        transform: translate(0);
+        box-shadow: none;
+        .projects__gallery__img__info {
+          display: initial;
+        }
+      }
+      &__info {
+        @include img-info-position;
+        text-align: center;
+        text-transform: uppercase;
+        z-index: 9999;
+        svg {
+          margin-bottom: 1em;
+        }
+        p {
+          margin-bottom: 0.8em;
+        }
+        :nth-child(2) {
+          color: $basic-white;
+        }
+        :last-child {
+          color: #d4d4d4;
+          text-transform: initial;
+        }
+      }
+    }
+  }
+}

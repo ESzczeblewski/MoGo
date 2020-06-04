@@ -1,0 +1,9 @@
+.barbers {
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.barbers img {
+  width: 100%;
+}
