@@ -22,6 +22,13 @@
     outline: 0.15em solid rgb(149, 225, 211);
     outline-offset: 1em;
   }
+  img {
+    width: 100%;
+    max-width: 8em;
+    border-radius: 50%;
+    align-self: center;
+    margin-top: 1.5em;
+  }
   &__opinion {
     grid-column: 3/4;
     grid-row: 1/2;

@@ -8,19 +8,23 @@
   background-color: $back-color;
 }
 
+@mixin peach-underline($bottom, $left, $center, $width, $height) {
+  content: '';
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+  transform: translateX($center);
+  width: $width;
+  height: $height;
+  background-color: $basic-peachy;
+}
+
 @mixin article-title {
   text-align: center;
   position: relative;
   margin-bottom: 3em;
   &::before {
-    content: '';
-    position: absolute;
-    bottom: -1em;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2.5em;
-    height: 0.1em;
-    background-color: $basic-peachy;
+    @include peach-underline(-1em, 50%, -50%, 2.5em, 0.1em);
   }
   h4 {
     margin-bottom: 0.5em;
@@ -48,7 +52,7 @@
       rgba(233, 131, 131, 0.8),
       rgba(242, 218, 138, 0.8)
     );
-    z-index: 9999;
+    z-index: 1;
   }
 }
 
@@ -75,4 +79,10 @@
     width: 1.5em;
     height: 100%;
   }
+}
+
+@mixin person-name {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 0.5em;
 }

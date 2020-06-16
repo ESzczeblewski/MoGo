@@ -96,7 +96,7 @@
   bottom: 0;
   left: 0;
   background: linear-gradient(rgba(233, 131, 131, 0.8), rgba(242, 218, 138, 0.8));
-  z-index: 9999;
+  z-index: 1;
 }
 
 .team__member p {

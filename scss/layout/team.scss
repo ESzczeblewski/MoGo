@@ -57,9 +57,7 @@
       text-align: center;
     }
     &__name {
-      text-transform: uppercase;
-      font-weight: 500;
-      margin-bottom: 0.5em;
+      @include person-name;
     }
     &__occupation {
       color: #aaa9a9;
