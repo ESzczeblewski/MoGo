@@ -1,0 +1,48 @@
+@import '../base/_variables.scss';
+
+.blog {
+  &__title {
+    @include article-title;
+  }
+  &__post {
+    position: relative;
+    max-width: 85%;
+    margin: 0 auto 2em;
+    display: grid;
+    gap: 0.8em;
+    cursor: pointer;
+    &__date {
+      position: absolute;
+      left: -0.5em;
+      bottom: 47%;
+      background-color: $minty;
+      color: $basic-white;
+      padding: 0.5em;
+    }
+    img {
+      width: 100%;
+    }
+    &__heading {
+      font-weight: 500;
+    }
+    &__activity {
+      padding-top: 0.5em;
+      display: flex;
+      svg {
+        margin-right: 0.3em;
+        align-self: center;
+      }
+      p {
+        margin-right: 1em;
+        color: $gray;
+      }
+    }
+    &--border {
+      padding-bottom: 1.2em;
+      border-bottom: 1px solid $gray;
+    }
+    p:nth-child(4) {
+      color: $gray;
+    }
+  }
+}

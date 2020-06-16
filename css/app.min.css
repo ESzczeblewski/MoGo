@@ -1596,3 +1596,74 @@ header {
 .testimonials-grid :last-child {
   margin-bottom: 0;
 }
+
+.blog__title {
+  text-align: center;
+  position: relative;
+  margin-bottom: 3em;
+}
+
+.blog__title::before {
+  content: '';
+  position: absolute;
+  bottom: -1em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.5em;
+  height: 0.1em;
+  background-color: #e98383;
+}
+
+.blog__title h4 {
+  margin-bottom: 0.5em;
+}
+
+.blog__post {
+  position: relative;
+  max-width: 85%;
+  margin: 0 auto 2em;
+  display: grid;
+  gap: 0.8em;
+  cursor: pointer;
+}
+
+.blog__post__date {
+  position: absolute;
+  left: -0.5em;
+  bottom: 47%;
+  background-color: #95e1d3;
+  color: #ffffff;
+  padding: 0.5em;
+}
+
+.blog__post img {
+  width: 100%;
+}
+
+.blog__post__heading {
+  font-weight: 500;
+}
+
+.blog__post__activity {
+  padding-top: 0.5em;
+  display: flex;
+}
+
+.blog__post__activity svg {
+  margin-right: 0.3em;
+  align-self: center;
+}
+
+.blog__post__activity p {
+  margin-right: 1em;
+  color: #d4d4d4;
+}
+
+.blog__post--border {
+  padding-bottom: 1.2em;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.blog__post p:nth-child(4) {
+  color: #d4d4d4;
+}
