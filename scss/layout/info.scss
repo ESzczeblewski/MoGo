@@ -1,0 +1,122 @@
+@import '../base/_variables.scss';
+
+.info {
+  display: grid;
+  width: 80%;
+  margin: auto;
+  padding-bottom: 2em;
+  border-bottom: 1px solid $gray;
+  &__company {
+    color: $gray;
+    margin-bottom: 3em;
+    display: grid;
+    line-height: 1.2em;
+    h2 {
+      font-family: $h1-3-font-family;
+      text-align: left;
+      margin-bottom: 1em;
+    }
+    &__description {
+      margin-bottom: 2em;
+    }
+    &__followers {
+      color: $basic-black;
+      padding-bottom: 1em;
+      border-bottom: 1px solid $gray;
+      span {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  &__social-media {
+    margin: 0.5em 0 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    fill: #95e1d3;
+    p {
+      padding-bottom: 0.5em;
+    }
+    a {
+      padding: 0.5em;
+      &:visited {
+        fill: inherit;
+      }
+      &:hover,
+      &:active {
+        fill: $basic-peachy;
+      }
+    }
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-left: 0.3em;
+    input {
+      padding: 0.25em 0.8em;
+      margin-bottom: 1em;
+      border: 1px solid $gray;
+      color: $gray;
+    }
+    button {
+      text-transform: uppercase;
+      background-color: $minty;
+      border: none;
+      padding: 0.3em 1.5em;
+      color: $basic-white;
+      font-family: $primary-font-family;
+      font-weight: 600;
+      font-size: 1.5rem;
+      &:hover,
+      &:active {
+        background-color: $basic-peachy;
+      }
+    }
+  }
+  &__blogs {
+    margin-bottom: 3em;
+    display: grid;
+    &__post {
+      display: grid;
+      grid-template-columns: 0.4fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      margin-bottom: 2em;
+      img {
+        grid-column: 1/2;
+        grid-row: 1/4;
+        margin-right: 1em;
+      }
+      &__title {
+        :first-child {
+          font-weight: 500;
+          margin-bottom: 0.5em;
+          line-height: 1.7rem;
+        }
+        :last-child {
+          color: $gray;
+        }
+      }
+    }
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__insta {
+    cursor: pointer;
+    &__imgs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.2em;
+      margin-bottom: 1em;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    p {
+      color: $gray;
+    }
+  }
+}
