@@ -483,21 +483,86 @@ h1 {
   padding-bottom: 0.8em;
 }
 
+@media (min-width: 768px) {
+  h1 {
+    font-size: 7.5rem;
+    line-height: 7rem;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  h1 {
+    font-size: 5rem;
+    line-height: 4.6rem;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1199px) {
+  h1 {
+    font-size: 10rem;
+    line-height: 9.5rem;
+  }
+}
+
+@media (min-width: 1449px) {
+  h1 {
+    font-size: 12.5rem;
+    line-height: 12rem;
+  }
+}
+
 h1::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 1.5rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  width: 1em;
-  height: 0.04em;
+  width: 6rem;
+  height: 0.2rem;
   background-color: #ffffff;
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  h1::before {
+    bottom: -1rem;
+  }
+}
+
+@media (min-width: 1199px) {
+  h1::before {
+    bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 1449px) {
+  h1::before {
+    bottom: 3.5rem;
+  }
 }
 
 h2 {
   font-size: 2.4rem;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1199px) {
+  h2 {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1449px) {
+  h2 {
+    font-size: 6.5rem;
+  }
 }
 
 h3 {
@@ -561,21 +626,86 @@ h1 {
   padding-bottom: 0.8em;
 }
 
+@media (min-width: 768px) {
+  h1 {
+    font-size: 7.5rem;
+    line-height: 7rem;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  h1 {
+    font-size: 5rem;
+    line-height: 4.6rem;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1199px) {
+  h1 {
+    font-size: 10rem;
+    line-height: 9.5rem;
+  }
+}
+
+@media (min-width: 1449px) {
+  h1 {
+    font-size: 12.5rem;
+    line-height: 12rem;
+  }
+}
+
 h1::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 1.5rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  width: 1em;
-  height: 0.04em;
+  width: 6rem;
+  height: 0.2rem;
   background-color: #ffffff;
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  h1::before {
+    bottom: -1rem;
+  }
+}
+
+@media (min-width: 1199px) {
+  h1::before {
+    bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 1449px) {
+  h1::before {
+    bottom: 3.5rem;
+  }
 }
 
 h2 {
   font-size: 2.4rem;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1199px) {
+  h2 {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1449px) {
+  h2 {
+    font-size: 6.5rem;
+  }
 }
 
 h3 {
@@ -605,6 +735,7 @@ header {
   margin-bottom: 1em;
   position: relative;
   height: 100vh;
+  min-height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -638,9 +769,29 @@ header {
   font-size: 1.3rem;
   background-color: transparent;
   justify-self: center;
-  margin-top: 1em;
   border: 2px solid #ffffff;
   padding: 0.3em 1.5em;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .banner button {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1449px) {
+  .banner button {
+    font-size: 1.7rem;
+    padding: 0.3em 1.7em;
+  }
+}
+
+.banner button:hover, .banner button:active {
+  font-weight: 600;
+  transform: translate(-0.4em, -0.4em);
+  box-shadow: 0.4em 0.4em 0px 0px #95e1d3;
+  background: linear-gradient(rgba(233, 131, 131, 0.8), rgba(242, 218, 138, 0.8));
 }
 
 .menu-shadow {
@@ -650,6 +801,20 @@ header {
   grid-template-columns: 1fr 1fr;
   row-gap: 1em;
   width: 80%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .menu-shadow {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-shadow {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .menu-shadow span {
@@ -657,8 +822,14 @@ header {
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   text-transform: uppercase;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.404);
   padding-top: 1em;
+}
+
+@media (min-width: 768px) {
+  .menu-shadow span {
+    font-size: 1.4rem;
+  }
 }
 
 .menu-shadow span::before {
@@ -668,7 +839,11 @@ header {
   left: 0;
   width: 90%;
   height: 2px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.404);
+}
+
+.menu-shadow span:first-child {
+  color: #ffffff;
 }
 
 .menu-shadow span:first-child::before {
@@ -702,8 +877,8 @@ header {
 }
 
 .navigation {
-  background-color: #e98383;
-  position: fixed;
+  background-color: transparent;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -712,6 +887,17 @@ header {
   align-items: center;
   padding: 0.5em;
   z-index: 2;
+  max-width: 1150px;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-rows: 1fr;
+    padding: 1em;
+  }
 }
 
 .navigation__hamburger {
@@ -721,6 +907,12 @@ header {
   background-color: transparent;
   margin: 0;
   border: 0;
+}
+
+@media (min-width: 768px) {
+  .navigation__hamburger {
+    display: none;
+  }
 }
 
 .navigation__hamburger__box {
@@ -795,7 +987,7 @@ header {
 
 @media (min-width: 400px) and (orientation: landscape) {
   .navigation__list {
-    top: 7em;
+    top: 100%;
     height: 7.5em;
     flex-direction: row;
     flex-wrap: wrap;
@@ -806,6 +998,23 @@ header {
 @media (min-width: 720px) and (orientation: landscape) {
   .navigation__list {
     justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .navigation__list {
+    background: transparent;
+    font-size: 1.5rem;
+    position: relative;
+    top: 0;
+    left: auto;
+    transform: translate(0);
+    width: 100%;
+    height: 4em;
+    padding: 0;
+    justify-content: flex-end;
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -824,10 +1033,17 @@ header {
   border: 0;
 }
 
+@media (min-width: 768px) {
+  .navigation__list button {
+    padding: 5em;
+    margin-right: 1.5em;
+  }
+}
+
 .navigation__list button::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -0.2em;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
@@ -836,12 +1052,24 @@ header {
   background-color: #f2da8a;
 }
 
+@media (min-width: 768px) {
+  .navigation__list button::before {
+    bottom: -0.4em;
+  }
+}
+
 .navigation__list button:hover {
   color: #f2da8a;
 }
 
 .navigation__list button:hover::before {
   width: 45%;
+}
+
+@media (min-width: 768px) {
+  .navigation__list button:hover::before {
+    width: 80%;
+  }
 }
 
 @media (min-width: 400px) and (orientation: landscape) {

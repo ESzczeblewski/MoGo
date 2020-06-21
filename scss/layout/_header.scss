@@ -6,6 +6,7 @@ header {
   margin-bottom: 1em;
   position: relative;
   height: 100vh;
+  min-height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,9 +37,26 @@ header {
     font-size: 1.3rem;
     background-color: transparent;
     justify-self: center;
-    margin-top: 1em;
     border: 2px solid $basic-white;
     padding: 0.3em 1.5em;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+    @media (min-width: 1449px) {
+      font-size: 1.7rem;
+      padding: 0.3em 1.7em;
+    }
+    &:hover,
+    &:active {
+      font-weight: 600;
+      transform: translate(-0.4em, -0.4em);
+      box-shadow: 0.4em 0.4em 0px 0px $minty;
+      background: linear-gradient(
+        rgba(233, 131, 131, 0.8),
+        rgba(242, 218, 138, 0.8)
+      );
+    }
   }
 }
 
@@ -49,15 +67,29 @@ header {
   grid-template-columns: 1fr 1fr;
   row-gap: 1em;
   width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  @media (max-width: 768px) and (orientation: landscape) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
   span {
     position: relative;
     font-family: $primary-font-family;
     font-size: 1.2rem;
     text-transform: uppercase;
-    color: $basic-white;
+    color: rgba(255, 255, 255, 0.404);
     padding-top: 1em;
+    @media (min-width: 768px) {
+      font-size: 1.4rem;
+    }
     &::before {
-      @include head-loading-bar(90%, $basic-white);
+      @include head-loading-bar(90%, rgba(255, 255, 255, 0.404));
+    }
+    &:first-child {
+      color: $basic-white;
     }
     &:first-child::before {
       background-color: $basic-white;

@@ -40,23 +40,58 @@ h1 {
   line-height: 4.6rem;
   text-align: center;
   padding-bottom: 0.8em;
+  @media (min-width: 768px) {
+    font-size: 7.5rem;
+    line-height: 7rem;
+  }
+  @media (max-width: 900px) and (orientation: landscape) {
+    font-size: 5rem;
+    line-height: 4.6rem;
+    padding-bottom: 0;
+  }
+  @media (min-width: 1199px) {
+    font-size: 10rem;
+    line-height: 9.5rem;
+  }
+  @media (min-width: 1449px) {
+    font-size: 12.5rem;
+    line-height: 12rem;
+  }
 }
 
 h1::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 1.5rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  width: 1em;
-  height: 0.04em;
+  width: 6rem;
+  height: 0.2rem;
   background-color: $basic-white;
+  @media (max-width: 900px) and (orientation: landscape) {
+    bottom: -1rem;
+  }
+  @media (min-width: 1199px) {
+    bottom: 2.5rem;
+  }
+  @media (min-width: 1449px) {
+    bottom: 3.5rem;
+  }
 }
 
 h2 {
   font-size: 2.4rem;
   text-align: center;
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+  }
+  @media (min-width: 1199px) {
+    font-size: 5rem;
+  }
+  @media (min-width: 1449px) {
+    font-size: 6.5rem;
+  }
 }
 
 h3 {
