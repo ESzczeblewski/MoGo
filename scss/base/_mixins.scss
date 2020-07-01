@@ -22,9 +22,19 @@
 @mixin article-title {
   text-align: center;
   position: relative;
+  margin: auto;
   margin-bottom: 3em;
+  @media (min-width: 600px) {
+    margin-bottom: 4em;
+  }
+  @media (min-width: 1137px) {
+    margin-bottom: 6rem;
+  }
   &::before {
-    @include peach-underline(-1em, 50%, -50%, 2.5em, 0.1em);
+    @include peach-underline(-1.5em, 50%, -50%, 4em, 0.1em);
+    @media (min-width: 600px) {
+      @include peach-underline(-2em, 50%, -50%, 4em, 0.1em);
+    }
   }
   h4 {
     margin-bottom: 0.5em;
@@ -36,6 +46,16 @@
   margin-bottom: 3em;
   line-height: 1.5em;
   text-align: center;
+}
+
+@mixin article-margin {
+  margin-top: 2em;
+  @media (min-width: 600px) {
+    margin-top: 4em;
+  }
+  @media (min-width: 1137px) {
+    margin-top: 8em;
+  }
 }
 
 @mixin img-overlay {

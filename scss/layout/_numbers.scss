@@ -1,11 +1,24 @@
 @import '../base/_variables.scss';
 
 .numbers {
-  margin-bottom: 2em;
-  background-color: #ececec;
+  @include article-margin;
+  background-color: $basic-white;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1px;
+  @media (min-width: 650px) {
+    background-color: $minty;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media (min-width: 1137px) {
+    grid-template-columns: 1fr repeat(5, 230px) 1fr;
+    div:first-of-type {
+      border-left: 1px solid $basic-white;
+    }
+    :first-child {
+      grid-column: 2/3;
+    }
+  }
   &__tile {
     color: $basic-white;
     text-align: center;
@@ -16,6 +29,10 @@
     align-items: center;
     text-transform: uppercase;
     background-color: $minty;
+    @media (min-width: 650px) {
+      height: 12eme;
+      border-right: 1px solid $basic-white;
+    }
     span {
       font-size: 5rem;
       margin-bottom: 0.1em;
@@ -23,5 +40,8 @@
   }
   :last-child {
     grid-column: 1/3;
+    @media (min-width: 650px) {
+      grid-column: auto;
+    }
   }
 }

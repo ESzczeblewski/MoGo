@@ -40,7 +40,7 @@ h1 {
   line-height: 4.6rem;
   text-align: center;
   padding-bottom: 0.8em;
-  @media (min-width: 768px) {
+  @media (min-width: 500px) {
     font-size: 7.5rem;
     line-height: 7rem;
   }
@@ -49,11 +49,11 @@ h1 {
     line-height: 4.6rem;
     padding-bottom: 0;
   }
-  @media (min-width: 1199px) {
+  @media (min-width: 901px) {
     font-size: 10rem;
     line-height: 9.5rem;
   }
-  @media (min-width: 1449px) {
+  @media (min-width: 1199px) {
     font-size: 12.5rem;
     line-height: 12rem;
   }
@@ -83,23 +83,35 @@ h1::before {
 h2 {
   font-size: 2.4rem;
   text-align: center;
-  @media (min-width: 768px) {
+  @media (min-width: 500px) {
     font-size: 3.5rem;
   }
-  @media (min-width: 1199px) {
+  @media (min-width: 900px) {
     font-size: 5rem;
   }
-  @media (min-width: 1449px) {
+  @media (min-width: 1199px) {
     font-size: 6.5rem;
   }
 }
 
 h3 {
   font-size: 2rem;
+  @media (min-width: 500px) {
+    font-size: 2.5rem;
+  }
+  @media (min-width: 1137px) {
+    font-size: 3rem;
+  }
 }
 
 h4 {
   font-size: 1.6rem;
+  @media (min-width: 500px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 1137px) {
+    font-size: 2.4rem;
+  }
 }
 
 h5 {
@@ -111,6 +123,9 @@ h5 {
 
 p {
   font-size: 1.4rem;
+  @media (min-width: 900px) {
+    font-size: 1.5rem;
+  }
 }
 
 .menu__list li {
