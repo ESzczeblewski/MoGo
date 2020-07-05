@@ -3,9 +3,9 @@ const hamburgerBox = document.querySelector('.navigation__hamburger__box');
 const navList = document.querySelector('.navigation__list');
 const drkBackground = document.querySelector('.dark-background');
 const mainImgsInfo = document.querySelectorAll('.main__imgs__pic__info');
-const weDoElement = document.querySelector('.we-do__info__element');
-const weDoArrow = document.querySelector('.we-do__info__element__arrow');
-const weDoDes = document.querySelector('.we-do__info__element__des');
+const weDoElement = document.querySelector('.we-do__info__block');
+const weDoArrow = document.querySelector('.we-do__info__block__arrow');
+const weDoDes = document.querySelector('.we-do__info__block__des');
 
 
 const handleClick = () => {
