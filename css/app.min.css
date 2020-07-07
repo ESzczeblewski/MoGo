@@ -1339,7 +1339,7 @@ header {
 
 @media (min-width: 650px) {
   .numbers__tile {
-    height: 12eme;
+    height: 12em;
     border-right: 1px solid #ffffff;
   }
 }
@@ -1794,8 +1794,8 @@ header {
 }
 
 .testimonials-inline {
+  margin-top: 2em;
   padding: 1em;
-  margin-bottom: 2em;
   display: grid;
   grid-template-columns: 5% 1fr 2fr 5%;
   grid-template-rows: 1fr auto;
@@ -1804,17 +1804,54 @@ header {
   background-color: #f3f3f3;
 }
 
+@media (min-width: 600px) {
+  .testimonials-inline {
+    margin-top: 4em;
+  }
+}
+
+@media (min-width: 1137px) {
+  .testimonials-inline {
+    margin-top: 8em;
+  }
+}
+
+@media (min-width: 678px) {
+  .testimonials-inline {
+    grid-template-columns: 1fr 1em 6em auto 1em 1fr;
+    column-gap: 3em;
+    height: 12em;
+  }
+}
+
+@media (min-width: 1165px) {
+  .testimonials-inline {
+    grid-template-columns: 1fr 3em 10em 40em 3em 1fr;
+  }
+}
+
 .testimonials-inline__icon {
   grid-column: 2/3;
-  grid-row: 1/3;
   width: 50%;
   height: 50%;
   max-width: 3em;
   max-height: 3em;
-  justify-self: end;
-  margin-right: 30%;
+  justify-self: center;
   outline: 0.15em solid #95e1d3;
   outline-offset: 1em;
+}
+
+@media (min-width: 678px) {
+  .testimonials-inline__icon {
+    grid-column: 3/4;
+  }
+}
+
+@media (min-width: 1165px) {
+  .testimonials-inline__icon {
+    max-width: 5em;
+    max-height: 5em;
+  }
 }
 
 .testimonials-inline img {
@@ -1826,17 +1863,34 @@ header {
 }
 
 .testimonials-inline__opinion {
-  grid-column: 3/4;
-  grid-row: 1/2;
+  line-height: initial;
   margin-bottom: 1em;
+  font-style: italic;
+}
+
+@media (min-width: 678px) {
+  .testimonials-inline__opinion {
+    line-height: 2.5rem;
+    margin-bottom: 1em;
+  }
+}
+
+@media (min-width: 1165px) {
+  .testimonials-inline__opinion {
+    font-size: 2rem;
+  }
 }
 
 .testimonials-inline__name {
-  grid-column: 3/4;
-  grid-row: 2/3;
   position: relative;
   font-family: "Kaushan Script", cursive;
   margin-left: 3em;
+}
+
+@media (min-width: 1165px) {
+  .testimonials-inline__name {
+    font-size: 2rem;
+  }
 }
 
 .testimonials-inline__name::before {
@@ -1870,6 +1924,12 @@ header {
   height: 100%;
 }
 
+@media (min-width: 678px) {
+  .testimonials-inline__arrow-left {
+    grid-column: 2/3;
+  }
+}
+
 .testimonials-inline__arrow-right {
   grid-column: 4/5;
   grid-row: 1/3;
@@ -1888,6 +1948,12 @@ header {
   transform: translate(-50%, -50%) rotate(90deg);
   width: 1.5em;
   height: 100%;
+}
+
+@media (min-width: 678px) {
+  .testimonials-inline__arrow-right {
+    grid-column: 5/6;
+  }
 }
 
 .team {
