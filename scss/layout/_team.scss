@@ -2,21 +2,39 @@
 @import '../base/_variables.scss';
 
 .team {
-  padding: 1em 1em 0;
+  margin: auto;
+  @include article-margin;
+  padding: 0 1em 0;
+  display: grid;
+  gap: 2em;
+  max-width: 1200px;
+  @media (min-width: 850px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
   &__title {
     @include article-title;
+    @media (min-width: 850px) {
+      grid-column: 1/4;
+    }
   }
   &__description {
     @include article-description;
+    @media (min-width: 850px) {
+      grid-column: 1/4;
+    }
   }
   &__member {
     position: relative;
-    width: 80%;
+    width: 100%;
     margin: 0 auto 2.5em;
     display: grid;
+    @media (min-width: 850px) {
+      margin-bottom: 0;
+    }
     &__img {
       position: relative;
       width: 100%;
+      max-width: 380px;
       margin: 0 auto 1em;
       transition: transform ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
       cursor: pointer;

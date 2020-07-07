@@ -12,9 +12,6 @@
   }
   &__description {
     @include article-description;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
     @media (min-width: 1137px) {
       margin-bottom: 6em;
     }

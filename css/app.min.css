@@ -1206,12 +1206,11 @@ header {
 
 .main__description {
   padding: 0 0.5em;
+  max-width: 960px;
+  margin: auto;
   margin-bottom: 3em;
   line-height: 1.5em;
   text-align: center;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 @media (min-width: 1137px) {
@@ -1692,6 +1691,8 @@ header {
 
 .we-do__description {
   padding: 0 0.5em;
+  max-width: 960px;
+  margin: auto;
   margin-bottom: 3em;
   line-height: 1.5em;
   text-align: center;
@@ -1957,7 +1958,30 @@ header {
 }
 
 .team {
-  padding: 1em 1em 0;
+  margin: auto;
+  margin-top: 2em;
+  padding: 0 1em 0;
+  display: grid;
+  gap: 2em;
+  max-width: 1200px;
+}
+
+@media (min-width: 600px) {
+  .team {
+    margin-top: 4em;
+  }
+}
+
+@media (min-width: 1137px) {
+  .team {
+    margin-top: 8em;
+  }
+}
+
+@media (min-width: 850px) {
+  .team {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .team__title {
@@ -2007,23 +2031,44 @@ header {
   margin-bottom: 0.5em;
 }
 
+@media (min-width: 850px) {
+  .team__title {
+    grid-column: 1/4;
+  }
+}
+
 .team__description {
   padding: 0 0.5em;
+  max-width: 960px;
+  margin: auto;
   margin-bottom: 3em;
   line-height: 1.5em;
   text-align: center;
 }
 
+@media (min-width: 850px) {
+  .team__description {
+    grid-column: 1/4;
+  }
+}
+
 .team__member {
   position: relative;
-  width: 80%;
+  width: 100%;
   margin: 0 auto 2.5em;
   display: grid;
+}
+
+@media (min-width: 850px) {
+  .team__member {
+    margin-bottom: 0;
+  }
 }
 
 .team__member__img {
   position: relative;
   width: 100%;
+  max-width: 380px;
   margin: 0 auto 1em;
   transition: transform ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
   cursor: pointer;
@@ -2160,6 +2205,8 @@ header {
 
 .projects__description {
   padding: 0 0.5em;
+  max-width: 960px;
+  margin: auto;
   margin-bottom: 3em;
   line-height: 1.5em;
   text-align: center;
