@@ -1978,7 +1978,7 @@ header {
   }
 }
 
-@media (min-width: 850px) {
+@media (min-width: 800px) {
   .team {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -2031,7 +2031,7 @@ header {
   margin-bottom: 0.5em;
 }
 
-@media (min-width: 850px) {
+@media (min-width: 800px) {
   .team__title {
     grid-column: 1/4;
   }
@@ -2046,7 +2046,7 @@ header {
   text-align: center;
 }
 
-@media (min-width: 850px) {
+@media (min-width: 800px) {
   .team__description {
     grid-column: 1/4;
   }
@@ -2059,7 +2059,7 @@ header {
   display: grid;
 }
 
-@media (min-width: 850px) {
+@media (min-width: 800px) {
   .team__member {
     margin-bottom: 0;
   }
@@ -2068,10 +2068,16 @@ header {
 .team__member__img {
   position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: 300px;
   margin: 0 auto 1em;
   transition: transform ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
   cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  .team__member__img {
+    max-width: 380px;
+  }
 }
 
 .team__member__img img {
@@ -2143,13 +2149,46 @@ header {
 }
 
 .barbers {
-  margin-bottom: 2em;
+  margin-top: 2em;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  background-color: #eaeff2;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  .barbers {
+    margin-top: 4em;
+  }
+}
+
+@media (min-width: 1137px) {
+  .barbers {
+    margin-top: 8em;
+  }
+}
+
+@media (min-width: 800px) {
+  .barbers {
+    grid-template-columns: repeat(6, auto);
+    height: 12em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .barbers {
+    grid-template-columns: 1fr repeat(6, 200px) 1fr;
+    height: 12em;
+  }
+  .barbers :first-child {
+    grid-column: 2/3;
+  }
 }
 
 .barbers img {
   width: 100%;
+  max-width: 150px;
+  justify-self: center;
 }
 
 .projects {

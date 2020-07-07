@@ -1,8 +1,23 @@
 .barbers {
-  margin-bottom: 2em;
+  @include article-margin;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(234, 239, 242);
+  align-items: center;
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(6, auto);
+    height: 12em;
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr repeat(6, 200px) 1fr;
+    height: 12em;
+    :first-child {
+      grid-column: 2/3;
+    }
+  }
   img {
     width: 100%;
+    max-width: 150px;
+    justify-self: center;
   }
 }

@@ -8,18 +8,18 @@
   display: grid;
   gap: 2em;
   max-width: 1200px;
-  @media (min-width: 850px) {
+  @media (min-width: 800px) {
     grid-template-columns: repeat(3, 1fr);
   }
   &__title {
     @include article-title;
-    @media (min-width: 850px) {
+    @media (min-width: 800px) {
       grid-column: 1/4;
     }
   }
   &__description {
     @include article-description;
-    @media (min-width: 850px) {
+    @media (min-width: 800px) {
       grid-column: 1/4;
     }
   }
@@ -28,16 +28,19 @@
     width: 100%;
     margin: 0 auto 2.5em;
     display: grid;
-    @media (min-width: 850px) {
+    @media (min-width: 800px) {
       margin-bottom: 0;
     }
     &__img {
       position: relative;
       width: 100%;
-      max-width: 380px;
+      max-width: 300px;
       margin: 0 auto 1em;
       transition: transform ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
       cursor: pointer;
+      @media (min-width: 800px) {
+        max-width: 380px;
+      }
       img {
         width: 100%;
       }
