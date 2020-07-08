@@ -1859,8 +1859,15 @@ header {
   width: 100%;
   max-width: 8em;
   border-radius: 50%;
+  justify-self: center;
   align-self: center;
-  margin-top: 1.5em;
+}
+
+@media (min-width: 678px) {
+  .testimonials-inline img {
+    grid-column: 3/4;
+    max-width: 10em;
+  }
 }
 
 .testimonials-inline__opinion {
