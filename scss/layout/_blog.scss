@@ -1,20 +1,38 @@
 @import '../base/_variables.scss';
 
 .blog {
+  max-width: 1210px;
+  margin: auto;
+  @include article-margin;
+  @media (min-width: 900px) {
+    padding: 0 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2em;
+  }
   &__title {
     @include article-title;
+    @media (min-width: 900px) {
+      grid-column: 1/4;
+    }
   }
   &__post {
     position: relative;
-    max-width: 85%;
-    margin: 0 auto 2em;
+    width: 85%;
+    max-width: 390px;
+    margin: 0 auto 4em;
     display: grid;
     gap: 0.8em;
     cursor: pointer;
+    @media (min-width: 900px) {
+      width: 100%;
+      margin-bottom: 0;
+    }
     &__date {
       position: absolute;
       left: -0.5em;
-      bottom: 47%;
+      bottom: 9em;
       background-color: $minty;
       color: $basic-white;
       padding: 0.5em;

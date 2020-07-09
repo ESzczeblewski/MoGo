@@ -2586,6 +2586,34 @@ header {
   margin-bottom: 0;
 }
 
+.blog {
+  max-width: 1210px;
+  margin: auto;
+  margin-top: 2em;
+}
+
+@media (min-width: 600px) {
+  .blog {
+    margin-top: 4em;
+  }
+}
+
+@media (min-width: 1137px) {
+  .blog {
+    margin-top: 8em;
+  }
+}
+
+@media (min-width: 900px) {
+  .blog {
+    padding: 0 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2em;
+  }
+}
+
 .blog__title {
   text-align: center;
   position: relative;
@@ -2633,19 +2661,33 @@ header {
   margin-bottom: 0.5em;
 }
 
+@media (min-width: 900px) {
+  .blog__title {
+    grid-column: 1/4;
+  }
+}
+
 .blog__post {
   position: relative;
-  max-width: 85%;
-  margin: 0 auto 2em;
+  width: 85%;
+  max-width: 390px;
+  margin: 0 auto 4em;
   display: grid;
   gap: 0.8em;
   cursor: pointer;
 }
 
+@media (min-width: 900px) {
+  .blog__post {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
 .blog__post__date {
   position: absolute;
   left: -0.5em;
-  bottom: 47%;
+  bottom: 9em;
   background-color: #95e1d3;
   color: #ffffff;
   padding: 0.5em;
