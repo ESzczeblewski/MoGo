@@ -1,179 +1,194 @@
 @import '../base/_variables.scss';
+@import '../base/_mixins.scss';
 
-.dark-background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.801);
-  transition: opacity ease-out 0.2s;
-  z-index: 1;
+$hamburger-menu-size: 4em;
+$hamburger-menu-border-radius: 0.5em;
+$hamburger-menu-bg-color: #0000007a;
+$hamburger-menu-line-height: 2px;
+$hover-line-height: $hamburger-menu-line-height;
+$content-bg-color: darken($basic-peachy, 10%);
+$main-color: #fefefe;
+$hover-color: $basic-yellow;
+$anim-duration: 0.4s;
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
 }
 
-.dark-background--off {
-  opacity: 0;
-  display: none;
-}
-
-.navigation {
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
+.outer-menu {
+  position: fixed;
+  top: 5vh;
   right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5em;
-  z-index: 2;
-  max-width: 1150px;
-  margin: auto;
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 20% 1fr;
-    grid-template-rows: 1fr;
-    padding: 1em;
-  }
-  &__hamburger {
-    padding: 0.5em;
-    display: inline-block;
-    cursor: pointer;
-    background-color: transparent;
-    margin: 0;
-    border: 0;
-    @media (min-width: 768px) {
-      display: none;
-    }
-    &__box {
-      display: inline-block;
-      position: relative;
-      width: 2.5em;
-      height: 1.5em;
-      cursor: pointer;
-      span {
-        display: block;
-        width: 100%;
-        height: 0.25em;
-        background-color: black;
-        position: absolute;
-      }
-      :first-child {
-        top: 0;
-        transition: top ease-in-out 0.2s 0.4s, transform ease-in-out 0.2s;
-      }
-      :nth-child(2n) {
-        top: 50%;
-        transform: translateY(-50%);
-        transition: visibility ease-in-out 0.1s 0.2s;
-      }
-      :last-child {
-        bottom: 0;
-        transition: bottom ease-in-out 0.2s 0.4s, transform ease-in-out 0.2s;
-      }
-      &.open {
-        :first-child {
-          top: 50%;
-          transform: translateY(-50%) rotate(45deg);
-          transition: top ease-in-out 0.2s, transform ease-in-out 0.2s 0.4s;
-        }
-        :nth-child(2n) {
-          visibility: hidden;
-          transition: visibility ease-in-out 0.4s;
-        }
-        :last-child {
-          bottom: 50%;
-          transform: translateY(50%) rotate(-45deg);
-          transition: bottom ease-in-out 0.2s, transform ease-in-out 0.2s 0.4s;
-        }
-      }
-    }
-  }
-  &__list {
-    background: $main-gradient;
-    font-size: 3rem;
-    font-weight: 900;
+  z-index: 1;
+  width: 4em;
+  height: 4em;
+
+  .checkbox-toggle {
     position: absolute;
-    top: 200%;
-    left: 50%;
-    transform: translate(-50%);
-    width: 85%;
-    height: 15em;
-    padding: 2em 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    transition: opacity 0.4s, visibility 0.4s;
-    opacity: 0;
-    visibility: hidden;
+    top: 0;
+    right: 0;
     z-index: 2;
-    @media (min-width: 400px) and (orientation: landscape) {
-      top: 100%;
-      height: 7.5em;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
-    @media (min-width: 720px) and (orientation: landscape) {
-      justify-content: center;
-    }
-    @media (min-width: 768px) {
-      background: transparent;
-      font-size: 1.5rem;
-      position: relative;
-      top: 0;
-      left: auto;
-      transform: translate(0);
-      width: 100%;
-      height: 4em;
-      padding: 0;
-      justify-content: flex-end;
-      opacity: 1;
-      visibility: visible;
-    }
-    &.show {
-      opacity: 1;
-      transition: visibility 1s;
-      visibility: visible;
-    }
-    button {
-      position: relative;
-      color: rgb(255, 255, 255);
-      font-weight: 600;
-      padding: 0.2em 2em;
-      background-color: transparent;
-      border: 0;
-      @media (min-width: 768px) {
-        //PADDING SIĘ NIE ZMIENIA
-        padding: 5em;
-        margin-right: 1.5em;
-      }
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: -0.2em;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0.1em;
-        transition: all ease-out 0.3s;
-        background-color: rgb(242, 218, 138);
-        @media (min-width: 768px) {
-          bottom: -0.4em;
-        }
-      }
-      &:hover {
-        color: rgb(242, 218, 138);
-        &::before {
-          width: 45%;
-          @media (min-width: 768px) {
-            width: 80%;
+    cursor: pointer;
+    width: $hamburger-menu-size;
+    height: $hamburger-menu-size;
+    opacity: 0;
+
+    &:checked {
+      & + .hamburger {
+        > div {
+          transform: rotate(135deg);
+
+          &:before,
+          &:after {
+            top: 0;
+            transform: rotate(90deg);
+          }
+
+          &:after {
+            opacity: 0;
           }
         }
       }
-      @media (min-width: 400px) and (orientation: landscape) {
-        padding: 0.2em 0.5em;
+
+      & ~ .menu {
+        pointer-events: auto;
+        visibility: visible;
+
+        > div {
+          transform: scale(1);
+          transition-duration: 0.75s;
+
+          > div {
+            opacity: 1;
+            transition: opacity $anim-duration ease $anim-duration;
+          }
+        }
+      }
+    }
+
+    &:checked:hover + .hamburger > div {
+      transform: rotate(225deg);
+    }
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: $hamburger-menu-size;
+    height: $hamburger-menu-size;
+    padding: 0.5em 1em;
+    background: $hamburger-menu-bg-color;
+    border-radius: $hamburger-menu-border-radius 0 0
+      $hamburger-menu-border-radius;
+    cursor: pointer;
+    @include flex-center;
+
+    > div {
+      position: relative;
+      width: 100%;
+      height: $hamburger-menu-line-height;
+      background: $main-color;
+      transition: all $anim-duration ease;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -$hamburger-menu-size / 6;
+        left: 0;
+        width: 100%;
+        height: $hamburger-menu-line-height;
+        background: inherit;
+        transition: all $anim-duration ease;
+      }
+
+      &:after {
+        top: $hamburger-menu-size / 6;
+      }
+    }
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    visibility: hidden;
+    overflow: hidden;
+    @include flex-center;
+
+    > div {
+      width: 300vw;
+      height: 300vw;
+      color: $main-color;
+      background: $content-bg-color;
+      border-radius: 50%;
+      transition: all $anim-duration ease;
+      flex: none;
+      transform: scale(0);
+      overflow: hidden;
+      @include flex-center;
+
+      > div {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        transition: opacity $anim-duration ease;
+        overflow-y: auto;
+        flex: none;
+        @include flex-center;
+
+        > ul {
+          list-style: none;
+          padding: 0 1em;
+          margin: 0;
+          display: block;
+          max-height: 100vh;
+
+          > li {
+            padding: 0.5em 1em;
+            margin: 1em;
+            font-size: 24px;
+            display: block;
+
+            > a {
+              position: relative;
+              display: inline;
+              cursor: pointer;
+              transition: color $anim-duration ease;
+
+              &:hover {
+                color: $hover-color;
+
+                &:after {
+                  width: 100%;
+                }
+              }
+
+              &:after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                bottom: -0.15em;
+                left: 0;
+                width: 0;
+                height: $hover-line-height;
+                background: $hover-color;
+                transition: width $anim-duration ease;
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -12,23 +12,24 @@
     <link rel="stylesheet" href="css/app.min.css">
   </head>
   <body>
-    <div class="dark-background dark-background--off"></div>
     <header>
-      <nav class="navigation">
-        <img src="img/MoGo.png" alt="MoGo logo">
-        <button class="navigation__hamburger" aria-expanded="false">
-          <div class="navigation__hamburger__box">
-            <span></span>
-            <span></span>
-            <span></span>
+      <nav class="outer-menu">
+        <input class="checkbox-toggle" type="checkbox" />
+        <div class="hamburger">
+          <div></div>
+        </div>
+        <div class="menu">
+          <div>
+            <div>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
           </div>
-        </button>
-        <div class="navigation__list">
-          <button>About</button>
-          <button>Service</button>
-          <button>Work</button>
-          <button>Blog</button>
-          <button>Contact</button>
         </div>
       </nav>
       <div class="hero">
@@ -585,7 +586,7 @@
     </article>
     <article class="info">
       <div class="info__company">
-        <h2>MoGo</h2>
+        <span>MoGo</span>
         <p class="info__company__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
         </p>
         <p class="info__company__followers"><span>15k</span> followers</p>
