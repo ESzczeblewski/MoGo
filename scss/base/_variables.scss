@@ -6,3 +6,17 @@ $basic-white: #ffffff;
 $basic-black: #000000;
 $minty: #95e1d3;
 $gray: rgb(212, 212, 212);
+
+$primary-font-family: 'Roboto', sans-serif;
+$h1-3-font-family: 'Montserrat', sans-serif;
+$h2-4-font-family: 'Kaushan Script', cursive;
+
+$hamburger-menu-size: 4em;
+$hamburger-menu-border-radius: 0.5em;
+$hamburger-menu-bg-color: #0000007a;
+$hamburger-menu-line-height: 2px;
+$hover-line-height: $hamburger-menu-line-height;
+$content-bg-color: darken($basic-peachy, 10%);
+$main-color: #fefefe;
+$hover-color: $basic-yellow;
+$anim-duration: 0.4s;

@@ -1,14 +1,18 @@
 @import '_variables.scss';
 
-$primary-font-family: 'Roboto', sans-serif;
-$h1-3-font-family: 'Montserrat', sans-serif;
-$h2-4-font-family: 'Kaushan Script', cursive;
-
 *,
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
 }
 
 html {
@@ -44,14 +48,10 @@ h1 {
     font-size: 7.5rem;
     line-height: 7rem;
   }
-  @media (max-width: 900px) and (orientation: landscape) {
-    font-size: 5rem;
-    line-height: 4.6rem;
-    padding-bottom: 0;
-  }
-  @media (min-width: 901px) {
+  @media (min-width: 900px) {
     font-size: 10rem;
     line-height: 9.5rem;
+    padding-bottom: 0.5em;
   }
   @media (min-width: 1199px) {
     font-size: 12.5rem;
@@ -62,15 +62,15 @@ h1 {
 h1::before {
   content: '';
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 1rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 6rem;
   height: 0.2rem;
   background-color: $basic-white;
-  @media (max-width: 900px) and (orientation: landscape) {
-    bottom: -1rem;
+  @media (min-width: 900px) {
+    bottom: 0.5;
   }
   @media (min-width: 1199px) {
     bottom: 2.5rem;
