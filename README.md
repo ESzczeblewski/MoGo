@@ -1,3 +1,3 @@
 # MoGo
 
-Live: https://kilu691.github.io/MoGo/
+Live: https://eszczeblewski.github.io/MoGo/
